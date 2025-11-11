@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Information App</title>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen p-4">
+
+    <!-- Main Container -->
+    <div class="container-box bg-white p-6 rounded-xl space-y-5">
+        <h2 class="text-2xl font-bold text-gray-800 text-center">Country Information</h2>
+
+        <!-- Country Selector -->
+        <div class="flex flex-col">
+            <label for="countrySelect" class="text-sm font-medium text-gray-600 mb-1">Select a Country:</label>
+            <select id="countrySelect" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                <option value="">--select--</option>
+                <option value="Australia">Australia</option>
+                <option value="Japan">Japan</option>
+                <option value="Poland">Poland</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Brazil">Brazil</option>
+            </select>
+        </div>
+
+        <!-- Loading + Info Table -->
+        <div class="relative min-h-[450px]">
+            <div id="loadingOverlay" class="absolute inset-0 bg-white bg-opacity-75 flex flex-col items-center justify-center rounded-lg transition-opacity duration-300 pointer-events-none opacity-0">
+                <img src="https://frontend-mtft.infinityfreeapp.com/week6/loading.gif" alt="Loading" class="w-16 h-16"/>
+            </div>
+
+            <table id="infoTable" class="w-full border-collapse text-sm">
+
+                <tbody>
+                    <tr><td class="p-3 font-medium">Name</td><td id="countryName" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Official name</td><td id="officialName" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Capital city</td><td id="capitalCity" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Language(s)</td><td id="languagesDisplay" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Google Map Link</td><td id="mapLink" class="p-3 text-blue-600 hover:underline"></td></tr>
+                    <tr><td class="p-3 font-medium">Population</td><td id="populationDisplay" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Flag</td><td id="flagDisplay" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Capital City Latitude &amp; Longitude</td><td id="latLngDisplay" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Total rainfall in 24 hours</td><td id="rainfallDisplay" class="p-3 text-gray-800"></td></tr>
+                    <tr><td class="p-3 font-medium">Average temperature in 24 hours</td><td id="tempDisplay" class="p-3 text-gray-800"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- Error Message -->
+            <div id="errorBox" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <span class="block sm:inline" id="errorMessage">Something went wrong fetching data.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

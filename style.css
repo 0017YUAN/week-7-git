@@ -1,0 +1,36 @@
+.container-box {
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#flagDisplay img {
+    max-width: 60px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#loading {
+  text-align: center;
+  margin: 12px 0; /* space between selector and table */
+  font-weight: 500;
+  color: #555;
+}
+
+
+.is-loading {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+#infoTable {
+    background-color: #fdf1f5;
+    border-radius: 8px;
+}
+
+#infoTable td:first-child {
+  font-weight: 700; 
+  color: #374151;
+}
+
