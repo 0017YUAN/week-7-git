@@ -61,7 +61,7 @@ async function fetchWeatherData(lat, lng) {
         return await response.json();
     } catch (error) {
         console.error("Weather API Error:", error);
-        handleError(`Could not fetch weather data: ${error.message}`);
+        handleError(`Error fetching country details: ${error.message}`);
         return null;
     }
 }
